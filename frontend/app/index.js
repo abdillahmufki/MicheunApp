@@ -47,7 +47,8 @@ const Home = () => {
       <View
         style={{
           paddingHorizontal: SIZES.medium,
-        }}>
+        }}
+      >
         <Search />
       </View>
 
@@ -57,12 +58,23 @@ const Home = () => {
             flex: 1,
             padding: SIZES.medium,
             backgroundColor: COLORS.lightWhite,
-          }}>
+          }}
+        >
           <Welcome />
 
           <Dashboard />
         </View>
       </ScrollView>
+
+      <View
+        style={{
+          flex: 1,
+          padding: SIZES.medium,
+          backgroundColor: COLORS.lightWhite,
+        }}
+      >
+        <Text>bottom navigation</Text>
+      </View>
     </SafeAreaView>
   );
 };

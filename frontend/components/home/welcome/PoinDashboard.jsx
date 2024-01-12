@@ -2,6 +2,7 @@ import { Text, View, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { FONT } from "../../../constants";
 export default function PoinDashboard() {
   return (
     <View style={styles.container}>
@@ -14,14 +15,20 @@ export default function PoinDashboard() {
           <Text style={styles.detail}>View Detail</Text>
         </View>
         <View
-          style={{ justifyContent: "center", alignItems: "center", gap: 5 }}>
+          style={{ justifyContent: "center", alignItems: "center", gap: 5 }}
+        >
           <Feather name="refresh-ccw" size={30} color="white" />
-          <Text style={{ color: "#fff" }}>Refresh</Text>
+          <Text style={{ color: "#fff", fontFamily: FONT.medium }}>
+            Refresh
+          </Text>
         </View>
         <View
-          style={{ justifyContent: "center", alignItems: "center", gap: 5 }}>
+          style={{ justifyContent: "center", alignItems: "center", gap: 5 }}
+        >
           <AntDesign name="swap" size={30} color="white" />
-          <Text style={{ color: "#fff" }}>Tukar Coin</Text>
+          <Text style={{ color: "#fff", fontFamily: FONT.medium }}>
+            Tukar Coin
+          </Text>
         </View>
       </View>
     </View>
@@ -46,11 +53,15 @@ const styles = StyleSheet.create({
   point: {
     fontSize: 22,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: FONT.medium,
+    display: "flex",
+    flexDirection: "row",
+    gap: 10,
   },
   detail: {
     fontSize: 15,
     color: "white",
+    fontFamily: FONT.medium,
   },
   wrapperPoint: {
     justifyContent: "center",

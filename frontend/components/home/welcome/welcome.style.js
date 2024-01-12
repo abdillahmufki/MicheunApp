@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   welcomeMessage: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
+    fontSize: 18,
     color: COLORS.primary,
     marginTop: 2,
   },
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     height: "100%",
     paddingHorizontal: SIZES.medium,
     color: "black",
-    placeholderTextColor: "black", // Set placeholder text color to black
   },
   searchBtn: {
     width: 50,
