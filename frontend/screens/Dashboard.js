@@ -1,6 +1,10 @@
 import React from "react-native";
-import { Text } from "react-native";
+import { Welcome } from "../components";
 
 export default function Dashboard() {
-  return <Text>Dashboard</Text>;
+  return (
+    <>
+      <Welcome />
+    </>
+  );
 }

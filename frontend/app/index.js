@@ -1,20 +1,19 @@
-import { useState } from "react";
-import { View, ScrollView, Text, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import { View, SafeAreaView, ScrollView } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { Stack, useRouter } from "expo-router";
 
 import { COLORS, icons, images, SIZES } from "../constants";
-import {
-  Nearbyjobs,
-  Popularjobs,
-  ScreenHeaderBtn,
-  Welcome,
-  Dashboard,
-  Search,
-} from "../components";
+import { ScreenHeaderBtn, Dashboard, Search } from "../components";
+import History from "../screens/History";
 
 const Home = () => {
-  const router = new useRouter();
+  const Tab = createBottomTabNavigator();
+  const navigation = useNavigation();
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -44,13 +43,12 @@ const Home = () => {
           headerTitle: "",
         }}
       />
-      <View
+      {/* <View
         style={{
           paddingHorizontal: SIZES.medium,
-        }}
-      >
+        }}>
         <Search />
-      </View>
+      </View> */}
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
@@ -58,23 +56,26 @@ const Home = () => {
             flex: 1,
             padding: SIZES.medium,
             backgroundColor: COLORS.lightWhite,
-          }}
-        >
-          <Welcome />
-
+          }}>
           <Dashboard />
         </View>
       </ScrollView>
 
-      <View
-        style={{
-          flex: 1,
-          padding: SIZES.medium,
-          backgroundColor: COLORS.lightWhite,
-        }}
-      >
-        <Text>bottom navigation</Text>
-      </View>
+      <NavigationContainer independent={true}>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="Home"
+            component={Dashboard}
+            options={{ headerShown: false }}
+          />
+          <Tab.Screen
+            name="History"
+            component={History}
+            options={{ headerShown: false }}
+          />
+          {/* Add more screens for additional tabs */}
+        </Tab.Navigator>
+      </NavigationContainer>
     </SafeAreaView>
   );
 };
