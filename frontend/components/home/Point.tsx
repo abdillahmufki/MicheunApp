@@ -1,22 +1,40 @@
 import { View, Text, StyleSheet } from "react-native";
 import { FONT, SIZES, SHADOWS, COLORS } from "../../constants";
 import { Feather } from "@expo/vector-icons";
+import { EvilIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Point = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topPoint}>
-        <Text style={styles.pointFont}>Micheun Point</Text>
-        <Text style={styles.pointFont}>100</Text>
-      </View>
-      <View style={styles.bottomPoint}>
         <View>
-          <Text style={styles.bottomPointFont}>Sampah terkumpul</Text>
-          <Text style={styles.bottomSampah}>10 Kg</Text>
+          <Text style={styles.pointFont}>Micheun Point</Text>
+          <Text style={styles.pointFont}>100</Text>
         </View>
-        <View style={styles.bottomPointRiwayat}>
-          <Text>Riwayat </Text>
-          <Feather name="arrow-right-circle" size={24} color="black" />
+        <View style={styles.refreshWrapper}>
+          <EvilIcons name="refresh" size={50} color="white" />
+          <Text style={styles.refreshLabel}>Refresh</Text>
+        </View>
+      </View>
+      <View>
+        <View style={styles.bottomPoint}>
+          <View>
+            <Text style={styles.bottomPointFont}>
+              Sampah terkumpul
+              <MaterialCommunityIcons
+                name="check-decagram"
+                size={16}
+                color={COLORS.greenPrimary}
+              />
+            </Text>
+            <Text style={styles.bottomSampah}>10 Kg</Text>
+            <Text style={styles.redeemPoint}>Tukarkan Point</Text>
+          </View>
+          <View style={styles.bottomPointRiwayat}>
+            <Text style={styles.fontHistory}>Riwayat </Text>
+            <Feather name="arrow-right-circle" size={24} color="black" />
+          </View>
         </View>
       </View>
     </View>
@@ -30,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
 
     flexDirection: "column",
+    justifyContent: "center",
     borderRadius: SIZES.small,
     overflow: "hidden",
     backgroundColor: "#FFF",
@@ -38,8 +57,9 @@ const styles = StyleSheet.create({
     height: 180,
   },
   topPoint: {
-    justifyContent: "center",
-    flexDirection: "column",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: COLORS.greenPrimary,
     borderTopLeftRadius: SIZES.small, // Add circular border to top-left corner
     gap: 5,
@@ -69,6 +89,7 @@ const styles = StyleSheet.create({
   bottomPointFont: {
     fontSize: SIZES.medium,
     display: "flex",
+    gap: 5,
     fontFamily: FONT.semibold,
     color: COLORS.greenPrimary,
   },
@@ -80,9 +101,30 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  fontHistory: {
+    fontSize: SIZES.medium,
+    fontFamily: FONT.semibold,
+    color: COLORS.black,
+  },
   bottomSampah: {
     fontSize: SIZES.medium,
     fontFamily: FONT.semibold,
     color: COLORS.black,
+  },
+  refreshWrapper: {
+    display: "flex",
+    alignItems: "center",
+  },
+  refreshLabel: {
+    fontSize: SIZES.small,
+    fontFamily: FONT.semibold,
+    color: COLORS.white,
+  },
+  redeemPoint: {
+    paddingTop: 5,
+    fontSize: SIZES.small,
+    fontFamily: FONT.semibold,
+    display: "flex",
+    alignItems: "center",
   },
 });
