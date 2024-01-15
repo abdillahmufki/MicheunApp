@@ -1,4 +1,4 @@
-## Project Overview
+# Project Overview
 
 Micheun is an application that serves as an integrator between waste collectors and users disposing of waste. The team consists of:
 
@@ -7,12 +7,18 @@ Micheun is an application that serves as an integrator between waste collectors 
 - **Indra (Hipster):**
 - **Abdillah Mufki (Hacker):**
 
-This project is developed using React Native for the mobile application, Golang for the backend, TensorFlow for ..., and Firebase for ... .
+## Technology Stack
 
-![Micheun App Screenshot](Images%20Project/Buang%20Sampah.png)
-![Micheun App Screenshot](Images%20Project/Home%20Dashboard%20User.png)
-![Micheun App Screenshot](Images%20Project/Login%20Page.png)
-![Micheun App Screenshot](Images%20Project/Signup%20Page.png)
+Micheun is powered by a robust and versatile technology stack, carefully chosen to deliver a seamless user experience and efficient functionality. Our stack includes:
 
-App V1
+- **React Native:** Crafting the mobile application with a focus on cross-platform compatibility and user-friendly interfaces.
+- **Golang:** Driving the backend operations with speed, efficiency, and scalability.
+- **TensorFlow:** Empowering the application with advanced image recognition and waste detection capabilities.
+- **Firebase:** Enhancing the overall functionality with real-time data synchronization, authentication, and secure storage.
+
+These technologies work in harmony to bring you an innovative waste management solution, ensuring optimal performance and a cutting-edge user experience.
+
+## Project Showcase
+
 ![Micheun App Screenshot](Images%20Project/mobileV1.png)
+![Micheun App Screenshot](Images%20Project/Micheun%20App.png)

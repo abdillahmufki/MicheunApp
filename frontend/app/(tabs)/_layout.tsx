@@ -25,7 +25,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: COLORS.green,
+        tabBarActiveTintColor: "#4942E4",
         tabBarInactiveTintColor: COLORS.white,
         tabBarStyle: {
           backgroundColor: COLORS.greenPrimary,
@@ -45,8 +45,7 @@ export default function TabLayout() {
           fontFamily: FONT.regular,
           fontSize: 18,
         },
-      }}
-    >
+      }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -82,8 +81,7 @@ export default function TabLayout() {
                 ...SHADOWS.medium,
                 bottom: 20,
                 padding: 10,
-              }}
-            >
+              }}>
               <View
                 style={{
                   flex: 1,
@@ -95,8 +93,7 @@ export default function TabLayout() {
                   borderRadius: 50,
 
                   backgroundColor: COLORS.green,
-                }}
-              >
+                }}>
                 <Ionicons name="scan" size={30} color={color} />
               </View>
             </View>
@@ -120,8 +117,7 @@ export default function TabLayout() {
               }}
               onPress={() => {
                 Alert.alert("Scan");
-              }}
-            >
+              }}>
               {props.children}
             </Pressable>
           ),
@@ -132,6 +128,7 @@ export default function TabLayout() {
         name="location"
         options={{
           title: "Lokasi",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Entypo name="location-pin" size={24} color={color} />
           ),
