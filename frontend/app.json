@@ -16,7 +16,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.micheunApp",
-      "ios.config.googleMapsApiKey": "AIzaSyA5WjfjDg3osuw7ylkRGlYJTCNkvqKX4SE",
+      "ios.config.googleMapsApiKey": "",
       "infoPlist": {
         "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
         "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location while the app is in use."
