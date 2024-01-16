@@ -21,5 +21,3 @@ These technologies work in harmony to bring you an innovative waste management s
 ## Project Showcase
 
 ![Micheun App Screenshot](Images%20Project/mobileV1.png)
-![Micheun App Screenshot](Images%20Project/micheunAppLocation.png)
-![Micheun App Screenshot](Images%20Project/Micheun%20App.png)
