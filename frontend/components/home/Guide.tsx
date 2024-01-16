@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { COLORS, SIZES } from "../../constants";
 
 export default function Guide() {
@@ -14,8 +14,10 @@ export default function Guide() {
           <Text style={styles.textCenterGuide}>
             Biar makin akrab, yuk baca panduan {"\n"} jual sampah dapat poin
           </Text>
-          <View style={styles.guideButton}>
-            <Text style={styles.guideButtonText}>Panduan</Text>
+          <View>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.guideButtonText}>Guide</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -47,7 +49,8 @@ const styles = StyleSheet.create({
     height: 35,
     borderRadius: 4,
   },
-  guideButton: {
+
+  button: {
     backgroundColor: COLORS.greenPrimary,
     paddingVertical: 10,
     paddingHorizontal: 16,

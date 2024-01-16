@@ -11,21 +11,31 @@ export default function Feature() {
         <View style={styles.gridFeature}>
           <View style={styles.card}>
             <View style={styles.cardBody}>
-              <FontAwesome5 name="truck-pickup" size={35} color="white" />
+              <FontAwesome5 name="truck-pickup" size={28} color="white" />
             </View>
-            <Text style={styles.cardLabel}>Jemput Sampah</Text>
+            <Text style={styles.cardLabel}>Jemput</Text>
           </View>
           <View style={styles.card}>
             <View style={styles.cardBody}>
-              <MaterialCommunityIcons name="sale" size={35} color="white" />
+              <MaterialCommunityIcons name="sale" size={28} color="white" />
             </View>
-            <Text style={styles.cardLabel}>Jual Sampah</Text>
+            <Text style={styles.cardLabel}>Jual</Text>
           </View>
           <View style={styles.card}>
             <View style={styles.cardBody}>
-              <Ionicons name="ios-people" size={35} color="white" />
+              <Ionicons name="ios-people" size={28} color="white" />
             </View>
             <Text style={styles.cardLabel}>Komunitas</Text>
+          </View>
+          <View style={styles.card}>
+            <View style={styles.cardBody}>
+              <MaterialCommunityIcons
+                name="dots-horizontal-circle"
+                size={28}
+                color="white"
+              />
+            </View>
+            <Text style={styles.cardLabel}>Lainnya</Text>
           </View>
         </View>
       </View>
@@ -35,7 +45,8 @@ export default function Feature() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 35,
+    flex: 1,
+    paddingVertical: 10,
     flexDirection: "column",
   },
   wrapperFeature: {
@@ -43,25 +54,28 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   gridFeature: {
+    flex: 4,
     flexDirection: "row",
+    flexWrap: "wrap", // Allow items to wrap to the next line
     justifyContent: "space-between",
+    alignItems: "flex-start", // Align items to the start of the container
+    maxHeight: 420, // Set a maximum height for the grid (adjust according to your needs)
     width: "100%",
-    paddingHorizontal: 10,
   },
   card: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: 100,
-    height: 100,
-    gap: 10,
+    width: "23%", // Set width for each card to achieve 4 columns
+    aspectRatio: 1, // Ensure cards maintain a square shape
+    marginBottom: 10, // Add margin between rows
+    gap: 3,
   },
   cardBody: {
     backgroundColor: COLORS.greenPrimary,
     borderRadius: 50,
-    padding: 10,
-    width: 75,
-    height: 75,
+    width: "70%", // Adjusted width for the card body
+    aspectRatio: 1, // Ensure the card body maintains a square shape
     justifyContent: "center",
     alignItems: "center",
     ...SHADOWS.small,

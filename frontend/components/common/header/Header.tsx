@@ -1,4 +1,4 @@
-import { Image, View, StyleSheet } from "react-native";
+import { Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 export default function Header() {
@@ -8,7 +8,9 @@ export default function Header() {
         source={require("../../../assets/images/logoHeader.png")}
         // style={styles.logo}
       />
-      <FontAwesome name="whatsapp" size={30} color="green" />
+      <TouchableOpacity>
+        <FontAwesome name="whatsapp" size={30} color="green" />
+      </TouchableOpacity>
     </View>
   );
 }

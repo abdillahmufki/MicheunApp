@@ -1,6 +1,12 @@
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
-import { Point, Welcome, Feature, Guide } from "../../components/home";
+import {
+  Point,
+  Welcome,
+  Feature,
+  Guide,
+  Promotion,
+} from "../../components/home";
 
 export default function Home() {
   return (
@@ -10,6 +16,7 @@ export default function Home() {
         <Point />
         <Feature />
         <Guide />
+        <Promotion />
       </ScrollView>
     </SafeAreaView>
   );
