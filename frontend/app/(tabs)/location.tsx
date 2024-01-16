@@ -46,8 +46,8 @@ const Lokasi = () => {
     {
       id: 2,
       coordinate: {
-        latitude: -6.9,
-        longitude: 107.61,
+        latitude: -6.87302,
+        longitude: 107.61583,
       },
       title: "Bank Sampah Unit dabaresih (Dago Barat Resik Hejo)",
       description:
@@ -188,7 +188,6 @@ const Lokasi = () => {
             coordinate={marker.coordinate}
             title={marker.title}
             description={marker.description}
-            pinColor="green"
             onPress={() => showAlert(marker)}
           />
         ))}

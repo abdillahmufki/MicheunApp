@@ -80,7 +80,7 @@ export default function TabLayout() {
                 borderRadius: 50,
                 ...SHADOWS.medium,
                 bottom: 20,
-                padding: 10,
+                padding: 5,
               }}>
               <View
                 style={{
@@ -88,8 +88,8 @@ export default function TabLayout() {
                   justifyContent: "center",
                   alignItems: "center",
 
-                  width: 60,
-                  height: 60,
+                  width: 50,
+                  height: 50,
                   borderRadius: 50,
 
                   backgroundColor: COLORS.green,

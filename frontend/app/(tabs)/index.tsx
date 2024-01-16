@@ -11,7 +11,7 @@ import {
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Welcome />
         <Point />
         <Feature />

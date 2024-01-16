@@ -16,7 +16,7 @@ export default function Guide() {
           </Text>
           <View>
             <TouchableOpacity style={styles.button}>
-              <Text style={styles.guideButtonText}>Guide</Text>
+              <Text style={styles.guideButtonText}>Panduan</Text>
             </TouchableOpacity>
           </View>
         </View>
