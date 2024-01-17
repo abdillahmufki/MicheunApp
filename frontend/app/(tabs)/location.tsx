@@ -6,11 +6,15 @@ import {
   TouchableOpacity,
   Alert,
   Linking,
+  Text,
+  Pressable,
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import { FontAwesome } from "@expo/vector-icons";
 import { SIZES, SHADOWS } from "../../constants";
+import { Entypo } from "@expo/vector-icons";
+import { Link } from "expo-router";
 
 type MarkerType = {
   id: number;
@@ -163,6 +167,7 @@ const Lokasi = () => {
     <View style={styles.container}>
       <View style={styles.inputWrapper}>
         <View style={styles.inputContainer}>
+          <Entypo name="location-pin" size={24} color="black" />
           <TextInput
             style={styles.searchInput}
             placeholder="Masukkan Kecamatan/Kelurahan"
@@ -171,8 +176,15 @@ const Lokasi = () => {
             onChangeText={(text) => setSearchLocation(text)}
           />
           <TouchableOpacity style={styles.buttonSearch} onPress={handleSearch}>
-            <FontAwesome name="search" size={24} color="black" />
+            <FontAwesome name="search" size={20} color="black" />
           </TouchableOpacity>
+        </View>
+        <View style={styles.homeButton}>
+          <Pressable style={styles.buttonSearch}>
+            <Link href="/">
+              <Entypo name="home" size={20} color="black" />
+            </Link>
+          </Pressable>
         </View>
       </View>
       <MapView
@@ -215,7 +227,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 10,
-    padding: 10,
+    paddingHorizontal: 10,
     backgroundColor: "#fff",
     borderRadius: 50,
   },
@@ -226,6 +238,14 @@ const styles = StyleSheet.create({
     ...SHADOWS.medium,
   },
   buttonSearch: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  homeButton: {
     width: 40,
     height: 40,
     borderRadius: 50,

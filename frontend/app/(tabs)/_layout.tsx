@@ -1,5 +1,5 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
+import { Link, Tabs, useNavigation } from "expo-router";
 import { Alert, Pressable, View } from "react-native";
 
 import { MaterialIcons } from "@expo/vector-icons";
@@ -9,6 +9,7 @@ import { Entypo } from "@expo/vector-icons";
 import { COLORS, FONT, SHADOWS } from "../../constants";
 
 import Header from "../../components/common/header/Header";
+import HeaderCamera from "../../components/common/HeaderCamera";
 // import LogoTitle from "../../components/common/header/LogoTitle"; // Add missing import
 
 /**
@@ -22,6 +23,8 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  const navigation = useNavigation(); // Move useNavigation hook to the top level
+
   return (
     <Tabs
       screenOptions={{
@@ -69,9 +72,20 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="scan"
+        name="camera"
         options={{
-          title: "Scan",
+          headerTitle: () => <HeaderCamera />,
+          title: "Scan Sampah",
+          headerStyle: {
+            backgroundColor: "#000",
+            height: 100,
+          },
+          headerLeftContainerStyle: {
+            paddingLeft: 20,
+          },
+          headerRightContainerStyle: {
+            paddingRight: 20,
+          },
           tabBarIcon: ({ color }) => (
             <View
               style={{
@@ -87,40 +101,19 @@ export default function TabLayout() {
                   flex: 1,
                   justifyContent: "center",
                   alignItems: "center",
-
                   width: 50,
                   height: 50,
                   borderRadius: 50,
-
                   backgroundColor: COLORS.green,
                 }}>
                 <Ionicons name="scan" size={30} color={color} />
               </View>
             </View>
           ),
+
           tabBarStyle: {
-            backgroundColor: COLORS.green,
-            borderTopEndRadius: 20,
-            borderTopStartRadius: 20,
-            paddingTop: 1,
-            height: 80,
-            paddingBottom: 10,
-            borderTopWidth: 0,
-            elevation: 0,
+            display: "none",
           },
-          tabBarButton: (props) => (
-            <Pressable
-              style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              onPress={() => {
-                Alert.alert("Scan");
-              }}>
-              {props.children}
-            </Pressable>
-          ),
         }}
       />
 
@@ -132,6 +125,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <Entypo name="location-pin" size={24} color={color} />
           ),
+          tabBarStyle: {
+            display: "none",
+          },
         }}
       />
       <Tabs.Screen
